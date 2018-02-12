@@ -20,11 +20,22 @@ func PrintCV(w http.ResponseWriter, r *http.Request) {
 			"email":    "contact@alebaffa.com",
 			"blog":     "alebaffa.com",
 			"twitter":  "@alebaffa",
-			"linkedIn": "in/alessandrobaffa"}}
+			"linkedIn": "in/alessandrobaffa"},
+		Experiences: []Experience{NewExperience(
+			"2012, 2018",
+			"Amadeus IT Group",
+			"Developer Advocate")}}
 
 	w.Header().Set("Content-Type", "application/json; charset=UTF-8")
 	w.WriteHeader(http.StatusOK)
 	if err := json.NewEncoder(w).Encode(cv); err != nil {
 		panic(err)
 	}
+}
+
+func NewExperience(Dates string, Company string, Position string) Experience {
+	return map[string]string{
+		"Dates":    Dates,
+		"Company":  Company,
+		"Position": Position}
 }
