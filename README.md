@@ -1,9 +1,8 @@
-# Example 8
+## API CV
+API written in `Go` to retrieve my resume.
 
-## Running the exmaple
-
-To run this exmaple, from the root of this project:
-
-```sh
-go run ./v8/*.go
+```bash
+curl --insecure https://alebaffa-cv.herokuapp.com/cv
 ```
+
+Or otherwise just open the browser on that link.
