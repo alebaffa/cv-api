@@ -32,10 +32,3 @@ func PrintCV(w http.ResponseWriter, r *http.Request) {
 		panic(err)
 	}
 }
-
-func NewExperience(Dates string, Company string, Position string) Experience {
-	return map[string]string{
-		"Dates":    Dates,
-		"Company":  Company,
-		"Position": Position}
-}
